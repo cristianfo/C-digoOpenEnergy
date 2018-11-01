@@ -93,14 +93,19 @@ void setup() {
 
 void loop() {
   
-   
+  //Calculo da corrente consumida 
   
   int16_t calibration = 3000/33; //Nº de voltas do secundário/resistor burden.
   unsigned long inicio = millis();
   double current =  calc_Vrms(50)*scalefactor*calibration;
-  unsigned long fim = millis();
-
+  unsigned long fim = millis();  
   unsigned long tempoCalculo=fim-inicio;
+
+  //end Calculo da corrente consumida
+
+  //Calculo da tensão
+  
+  //end Calculo da tensão
   
  //Envia dados MQTT ao Thingspeak
   
@@ -123,6 +128,8 @@ void loop() {
      client.print(postStr);  
   }
   client.stop();
+
+  //end Envia dados MQTT ao Thingspeak
 
   Serial.print("Irms measured: ");
   Serial.println(calc_Vrms(50)*scalefactor*calibration,7);
