@@ -22,6 +22,7 @@ String apiKey = "SXL1QNUHNGDIPRT1";
 const char* ssid     = "LABIND";
 const char* password = "LABINDECA2017";
 Adafruit_ADS1115 ads;  /* Use this for the 16-bit version */
+//#define ADS1015_REG_CONFIG_DR_1600SPS (0xC0);
 
 const char* server = "api.thingspeak.com";
 WiFiClient client;
